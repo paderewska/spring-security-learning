@@ -8,14 +8,26 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
+
+import javax.sql.DataSource;
 
 @SpringBootApplication
 public class SpringSecurityLearningApplication {
 
+    //---InMemoryAuthentication Case---
+//    @Bean
+//    UserDetailsManager memory() {
+//        return new InMemoryUserDetailsManager();
+//    }
+
+    //---JDBC-based Authentication Case---
     @Bean
-    UserDetailsManager memory() {
-        return new InMemoryUserDetailsManager();
+    UserDetailsManager memory(DataSource ds) {
+        JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager();
+        jdbcUserDetailsManager.setDataSource(ds);
+        return jdbcUserDetailsManager;
     }
 
     @Bean
