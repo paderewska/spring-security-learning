@@ -1,0 +1,50 @@
+dn: dc=springframework,dc=org
+objectClass: top
+objectClass: domain
+objectClass: extensibleObject
+dc: springframework
+
+dn: ou=groups,dc=springframework,dc=org
+objectclass: container
+objectclass: top
+cn: users
+
+dn: ou=subgroups,ou=groups,dc=springframework,dc=org
+objectClass: top
+objectClass: organizationalUnit
+ou: subgroups
+
+dn: ou=people,dc=springframework,dc=org
+objectClass: top
+objectClass: organizationalUnit
+ou: people
+
+dn: ou=space cadets,dc=springframework,dc=org
+objectClass: top
+objectClass: organizationalUnit
+ou: space cadets
+
+dn: ou="quoted people",dc=springframework,dc=org
+objectClass: top
+objectClass: organizationalUnit
+ou: "quoted people"
+
+dn: uid=ben,ou=people,dc=springframework,dc=org
+objectClass: top
+objectClass: person
+objectClass: organizationalUnit
+objectClass: inetOrgPerson
+cn: Ben Alex
+sn: Alex
+uid: ben
+userPassword: {SHA}nFCebWjxfaLbHHG1Qk5UU4trbvQ
+
+dn: uid=bob,ou=people,dc=springframework,dc=org
+objectClass: top
+objectClass: person
+objectClass: organizationalUnit
+objectClass: inetOrgPerson
+cn: Bob Hamilton
+sn: Hamilton
+uid: bob
+userPassword: bobpassword
